@@ -1,0 +1,99 @@
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+
+#status {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px auto 0;
+  font-size: 24px;
+  min-height: 32px;
+}
+
+#status .life {
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+#status .life.lost {
+  opacity: 0.25;
+  transform: scale(0.8);
+}
+
+#word {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 40px auto 10px;
+  font-family: monospace;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  min-height: 40px;
+}
+
+#word .slot {
+  width: 28px;
+  text-align: center;
+  border-bottom: 3px solid #8a2be2;
+  color: #222;
+}
+
+#word .slot.revealed {
+  color: #8a2be2;
+  border-bottom-color: transparent;
+}
+
+#letters {
+  display: grid;
+  grid-template-columns: repeat(11, 56px);
+  gap: 6px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.letter {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  height: 120px;
+  background: #69339b;
+  color: #faf3ff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+}
+
+.letter:hover:not(:disabled) {
+  background: #a44bf0;
+}
+.letter:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.letter:disabled {
+  cursor: not-allowed;
+}
+
+.letter.hit {
+  background: #3bff8f;
+  color: #222;
+}
+.letter.miss {
+  background: #ff3b6b;
+}
